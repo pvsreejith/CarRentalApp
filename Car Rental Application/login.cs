@@ -28,7 +28,7 @@ namespace Car_Rental_Application
                 var userName = tbUserName.Text.Trim();
                 var password = tbPassword.Text;
 
-                //Add comment for git testing
+                
                 var user = _db.users.FirstOrDefault(q => q.userName == userName && q.password == password);
 
                 if (user == null)
