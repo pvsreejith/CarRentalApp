@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d00169c399f04ed4a45764fe6e349198" Name="Diagram1" ZoomLevel="130">
+        <EntityTypeShape EntityType="CarRentalModel.rentalInfo" Width="1.5" PointX="4.125" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CarRentalModel.typeOfCar" Width="1.5" PointX="1.5" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="CarRentalModel.FK_rentalInfo_typeOfCar" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CarRentalModel.user" Width="1.5" PointX="1.5" PointY="3.375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

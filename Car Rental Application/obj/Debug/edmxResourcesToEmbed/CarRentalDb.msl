@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CarRentalModelStoreContainer" CdmEntityContainer="CarRentalEntities">
+    <EntitySetMapping Name="rentalInfoes">
+      <EntityTypeMapping TypeName="CarRentalModel.rentalInfo">
+        <MappingFragment StoreEntitySet="rentalInfo">
+          <ScalarProperty Name="customerId" ColumnName="customerId" />
+          <ScalarProperty Name="customerName" ColumnName="customerName" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="dateRented" ColumnName="dateRented" />
+          <ScalarProperty Name="dateReturned" ColumnName="dateReturned" />
+          <ScalarProperty Name="carId" ColumnName="carId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="typeOfCars">
+      <EntityTypeMapping TypeName="CarRentalModel.typeOfCar">
+        <MappingFragment StoreEntitySet="typeOfCar">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="carType" ColumnName="carType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="CarRentalModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

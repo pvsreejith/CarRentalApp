@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarRentalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="rentalInfo">
+    <Key>
+      <PropertyRef Name="customerId" />
+    </Key>
+    <Property Name="customerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="customerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cost" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dateRented" Type="DateTime" Precision="3" />
+    <Property Name="dateReturned" Type="DateTime" Precision="3" />
+    <Property Name="carId" Type="Int32" />
+    <NavigationProperty Name="typeOfCar" Relationship="Self.FK_rentalInfo_typeOfCar" FromRole="rentalInfo" ToRole="typeOfCar" />
+  </EntityType>
+  <EntityType Name="typeOfCar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="carType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="rentalInfoes" Relationship="Self.FK_rentalInfo_typeOfCar" FromRole="typeOfCar" ToRole="rentalInfo" />
+  </EntityType>
+  <Association Name="FK_rentalInfo_typeOfCar">
+    <End Role="typeOfCar" Type="Self.typeOfCar" Multiplicity="0..1" />
+    <End Role="rentalInfo" Type="Self.rentalInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="typeOfCar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="rentalInfo">
+        <PropertyRef Name="carId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarRentalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="rentalInfoes" EntityType="Self.rentalInfo" />
+    <EntitySet Name="typeOfCars" EntityType="Self.typeOfCar" />
+    <AssociationSet Name="FK_rentalInfo_typeOfCar" Association="Self.FK_rentalInfo_typeOfCar">
+      <End Role="typeOfCar" EntitySet="typeOfCars" />
+      <End Role="rentalInfo" EntitySet="rentalInfoes" />
+    </AssociationSet>
+    <EntitySet Name="users" EntityType="CarRentalModel.user" />
+  </EntityContainer>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
