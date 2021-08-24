@@ -17,6 +17,7 @@ namespace Car_Rental_Application
     {
         private readonly CarRentalEntities _db;
         //Add comment to test pull
+        //Add comment to test fetch at remote repo
         public login()
         {
             _db = new CarRentalEntities();
