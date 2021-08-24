@@ -12,6 +12,7 @@ using System.Windows.Forms;
 namespace Car_Rental_Application
 {
     //Add comment to test pull
+    //Add comment on local to test fetch
     public partial class login : Form
     {
         private readonly CarRentalEntities _db;
