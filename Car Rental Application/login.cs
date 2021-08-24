@@ -15,6 +15,7 @@ namespace Car_Rental_Application
     public partial class login : Form
     {
         private readonly CarRentalEntities _db;
+        //Add comment to test pull
         public login()
         {
             _db = new CarRentalEntities();
