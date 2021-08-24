@@ -11,6 +11,7 @@ using System.Windows.Forms;
 
 namespace Car_Rental_Application
 {
+    //Add comment to test pull
     public partial class login : Form
     {
         private readonly CarRentalEntities _db;
@@ -28,7 +29,7 @@ namespace Car_Rental_Application
                 var userName = tbUserName.Text.Trim();
                 var password = tbPassword.Text;
 
-                
+
                 var user = _db.users.FirstOrDefault(q => q.userName == userName && q.password == password);
 
                 if (user == null)
