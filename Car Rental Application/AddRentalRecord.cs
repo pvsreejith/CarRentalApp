@@ -13,7 +13,7 @@ namespace Car_Rental_Application
 {
     public partial class AddRentalRecord : Form
     {
-
+        //Add a comment to test fetch
         private readonly CarRentalEntities carRentalEntities;
         public AddRentalRecord()
         {
